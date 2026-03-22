@@ -6,13 +6,19 @@ I have been using *Claude* to assist me with my learning but looking up why a *l
 
 ## How Guessing Game Works
 
-1. `my_number`: This is where we generate a random *Integer* between 1 and 10 for the *user* to guess.
-2. `num_guess`: The user currently has **3** guesses. This is hard-coded currently.
-3. `def guess_input()`: This function holds the logic for taking the *user* input and does some error handling:
-  - Check to see if the input in a number using `ValueError`
-  - Check to see if the user has input a number within range of 1 - 10
-4. If the number the user input is **correct**, let them know. It will also break the loop.
-5. If the number the user input is **incorrect** we will decrement `num_guess` and ask the user to try again. 
+The game works by calling GuessingGame class and using the method play: 
+
+```python
+my_game = GuessingGame.play()
+```
+
+1. Will ask the player if they want to set the number of guesses.
+2. Will then give that user the n amount of guesses input to guess the number. 
+
+I learned about using self, which is still confusing, but essentially you need to use `self` to let python know we are talking about an instance, and not about doing something to the class overall. 
+
+Instance Methods: Work on the instance of the object itself and change data there,. 
+Class Methods: These can if you create theme, change variables for the whole Class which means every instance would then get that update.
 
 ## Future Development
 
