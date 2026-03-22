@@ -61,10 +61,6 @@ def guess_input():
         # We are checking to see if the number input by the user is within range. If it is not, we are providing them with the error message below.
         # I think there is an official way to do this, but for oour purposes, this is good enough.
 
-        if (guess_number > 10) or (guess_number < 1):
-            print(
-                "Invalid Input: Provided number is out of range. Please enter a number from 1 - 10"
-            )
         if guess_number != None and guess_number != "":
             return guess_number
     # Except is catching all input which is not an Integer. Even a float.
@@ -85,6 +81,9 @@ num_guesses = set_num_guesses()
 # set_num_guesses()
 while num_guesses > 0:
     user_guess = guess_input()
+    if (user_guess > 10) or (user_guess < 1):
+        print("Invalid Input: Number entered is not between 1 - 10!")
+        continue
     if user_guess == SECRET_NUMBER_GUESS:
         print(f"You guessed my number! It was {SECRET_NUMBER_GUESS}.")
         break
