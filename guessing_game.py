@@ -20,9 +20,9 @@ import random
 def get_num_guesses():
     while True:
         get_num_guess_prompt = input("How many guesses would you like: ")
-        num_guess_value = int(get_num_guess_prompt)
-        print(num_guess_value)
+        #print(num_guess_value)
         try:
+            num_guess_value = int(get_num_guess_prompt)
             if num_guess_value > 0:
                 return num_guess_value
             break
@@ -80,7 +80,10 @@ num_guesses = set_num_guesses()
 # RUNNING THE GAME
 # set_num_guesses()
 while num_guesses > 0:
+
     user_guess = guess_input()
+    if user_guess is None:
+        continue
     if (user_guess > 10) or (user_guess < 1):
         print("Invalid Input: Number entered is not between 1 - 10!")
         continue
